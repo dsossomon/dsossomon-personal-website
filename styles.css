@@ -1,9 +1,8 @@
 body {
   margin: 0px;
-  font-family: sans-serif;
-  color: red; /* This makes all regular text (p, h1, h2, li) red */
+  font-family: sans-serif; /* Optional: makes it look a bit cleaner */
+  
 }
-
 
 a {
   color: inherit;
@@ -12,18 +11,18 @@ a {
 }
 
 h1 {
-  width: 50%;
+  width: 100%; /* Changed to 100% for better mobile centering */
   text-align: center;
-  margin: 10px auto;
+  margin: 20px 0;
 }
 
 #nav-menu {
   display: flex;
-  flex: 1 1 auto;
   justify-content: space-evenly;
   position: sticky;
   top: 0px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 100; /* Keeps menu on top of the image */
 }
 
 .nav-div {
@@ -31,27 +30,29 @@ h1 {
   flex-grow: 1;
   border-left: 1px red solid;
   border-right: 1px red solid;
-  /* FIXED TYPO BELOW */
   position: relative; 
 }
 
 .nav-div a {
-  display: block; 
+  display: block; /* 'block' works better for clickable area */
   padding: 15px 0;
   background-color: navy;
-  color: white; /* Keeps the link text white */
+  color: red;
 }
-
 
 .nav-div ul {
   display: none;
   position: absolute;
   list-style-type: none;
-  padding-left: 0px;
-  margin: 0px;
-  /* Ensures the dropdown is as wide as the parent */
+  padding: 0;
+  margin: 0;
   width: 100%; 
   left: 0;
+  background-color: navy; /* Ensure dropdown has a background */
+}
+
+.nav-div ul li {
+  border-top: 1px solid white;
 }
 
 .nav-div:hover {
@@ -59,7 +60,7 @@ h1 {
   font-weight: bold;
 }
 
-.nav-div:hover a {
+.nav-div:hover > a {
   color: red;
 }
 
@@ -72,7 +73,8 @@ h1 {
   background-color: white;
   color: navy;
 }
+
 ol a, ul a, body > a {
-  color: blue; 
+  color: blue;
   text-decoration: underline;
 }
